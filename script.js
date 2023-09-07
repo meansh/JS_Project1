@@ -21,7 +21,18 @@ rect.addEventListener("mousemove", function(details) {
 
     }
     else{
-        console.log("right");
+        var bluecolor = 
+        gsap.utils.mapRange(
+            rectanglelocation.width/2, 
+            rectanglelocation.width, 
+            0, 
+            255, 
+            insiderectval
+            );
+        gsap.to(rect, {
+            backgroundColor: `rgb(0, 0, ${bluecolor})`,
+            ease: Power4,
+        })    
     }
     console.log(insiderectval);
 })
